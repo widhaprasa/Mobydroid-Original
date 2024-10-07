@@ -1,0 +1,66 @@
+DEFINE PUBLIC FINAL a()Ljava/util/Map;
+A:
+ALOAD this
+INVOKEVIRTUAL C.a()LM;
+DUP
+ASTORE 1
+LDC "host:devices"
+INVOKEVIRTUAL M.a(Ljava/lang/String;)V
+ALOAD 1
+INVOKEVIRTUAL M.a()V
+ALOAD 1
+INVOKEVIRTUAL M.a()Ljava/lang/String;
+ASTORE 2
+ALOAD 1
+INVOKEVIRTUAL M.b()V
+ALOAD 2
+LDC "\n"
+INVOKEVIRTUAL java/lang/String.split(Ljava/lang/String;)[Ljava/lang/String;
+ASTORE 1
+NEW java/util/HashMap
+DUP
+ALOAD 1
+ARRAYLENGTH
+INVOKESPECIAL java/util/HashMap.<init>(I)V
+ASTORE 2
+ALOAD 1
+ARRAYLENGTH
+ISTORE 3
+ICONST_0
+ISTORE 4
+B:
+ILOAD 4
+ILOAD 3
+IF_ICMPGE D
+ALOAD 1
+ILOAD 4
+AALOAD
+LDC "\t"
+INVOKEVIRTUAL java/lang/String.split(Ljava/lang/String;)[Ljava/lang/String;
+DUP
+ASTORE 5
+ARRAYLENGTH
+ICONST_2
+IF_ICMPNE C
+ALOAD 2
+ALOAD 5
+ICONST_1
+AALOAD
+INVOKESTATIC J.a(Ljava/lang/String;)LK;
+NEW D
+DUP
+ALOAD 5
+ICONST_0
+AALOAD
+ALOAD this
+INVOKESPECIAL D.<init>(Ljava/lang/String;LC;)V
+INVOKEVIRTUAL java/util/HashMap.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+POP
+C:
+IINC 4 1
+GOTO B
+D:
+ALOAD 2
+ARETURN
+E:
+F:

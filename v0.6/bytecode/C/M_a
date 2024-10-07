@@ -1,0 +1,14 @@
+DEFINE PUBLIC FINAL a()LM;
+A:
+NEW M
+DUP
+NEW java/net/Socket
+DUP
+ALOAD this
+GETFIELD C.a Ljava/lang/String;
+SIPUSH 5037
+INVOKESPECIAL java/net/Socket.<init>(Ljava/lang/String;I)V
+INVOKESPECIAL M.<init>(Ljava/net/Socket;)V
+ARETURN
+B:
+C:

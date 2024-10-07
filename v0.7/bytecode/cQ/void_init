@@ -1,0 +1,243 @@
+DEFINE PUBLIC <init>()V
+ALIAS H_META "handle[H_INVOKESTATIC java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;]"
+A:
+ALOAD this
+INVOKESPECIAL javax/swing/JPanel.<init>()V
+ALOAD this
+DUP
+ASTORE 1
+NEW cX
+DUP
+INVOKESPECIAL cX.<init>()V
+PUTFIELD cQ.a LcX;
+ALOAD 1
+NEW cX
+DUP
+INVOKESPECIAL cX.<init>()V
+PUTFIELD cQ.b LcX;
+ALOAD 1
+NEW javax/swing/JScrollPane
+DUP
+INVOKESPECIAL javax/swing/JScrollPane.<init>()V
+PUTFIELD cQ.a Ljavax/swing/JScrollPane;
+ALOAD 1
+NEW javax/swing/JTextPane
+DUP
+INVOKESPECIAL javax/swing/JTextPane.<init>()V
+PUTFIELD cQ.a Ljavax/swing/JTextPane;
+ALOAD 1
+NEW java/awt/Color
+DUP
+SIPUSH 250
+SIPUSH 250
+SIPUSH 250
+INVOKESPECIAL java/awt/Color.<init>(III)V
+INVOKEVIRTUAL cQ.setBackground(Ljava/awt/Color;)V
+ALOAD 1
+ACONST_NULL
+LDC "Screen Capture : "
+ICONST_0
+ICONST_0
+NEW java/awt/Font
+DUP
+LDC "Dialog"
+ICONST_1
+BIPUSH 11
+INVOKESPECIAL java/awt/Font.<init>(Ljava/lang/String;II)V
+INVOKESTATIC javax/swing/BorderFactory.createTitledBorder(Ljavax/swing/border/Border;Ljava/lang/String;IILjava/awt/Font;)Ljavax/swing/border/TitledBorder;
+INVOKEVIRTUAL cQ.setBorder(Ljavax/swing/border/Border;)V
+ALOAD 1
+GETFIELD cQ.a LcX;
+LDC "Clear"
+INVOKEVIRTUAL cX.setToolTipText(Ljava/lang/String;)V
+ALOAD 1
+GETFIELD cQ.a LcX;
+NEW cR
+DUP
+ALOAD 1
+INVOKESPECIAL cR.<init>(LcQ;)V
+INVOKEVIRTUAL cX.a(LH;)V
+ALOAD 1
+GETFIELD cQ.a LcX;
+FCONST_0
+INVOKEVIRTUAL cX.setAlignmentX(F)V
+ALOAD 1
+GETFIELD cQ.a LcX;
+FCONST_0
+INVOKEVIRTUAL cX.setAlignmentY(F)V
+ALOAD 1
+GETFIELD cQ.a LcX;
+ICONST_1
+INVOKEVIRTUAL cX.setFocusable(Z)V
+ALOAD 1
+GETFIELD cQ.a LcX;
+LDC 57528
+INVOKEVIRTUAL cX.a(C)V
+ALOAD 1
+GETFIELD cQ.b LcX;
+LDC "Save"
+INVOKEVIRTUAL cX.setToolTipText(Ljava/lang/String;)V
+ALOAD 1
+GETFIELD cQ.b LcX;
+NEW cS
+DUP
+ALOAD 1
+INVOKESPECIAL cS.<init>(LcQ;)V
+INVOKEVIRTUAL cX.a(LH;)V
+ALOAD 1
+GETFIELD cQ.b LcX;
+FCONST_0
+INVOKEVIRTUAL cX.setAlignmentX(F)V
+ALOAD 1
+GETFIELD cQ.b LcX;
+FCONST_0
+INVOKEVIRTUAL cX.setAlignmentY(F)V
+ALOAD 1
+GETFIELD cQ.b LcX;
+ICONST_1
+INVOKEVIRTUAL cX.setFocusable(Z)V
+ALOAD 1
+GETFIELD cQ.b LcX;
+LDC 57697
+INVOKEVIRTUAL cX.a(C)V
+ALOAD 1
+GETFIELD cQ.a Ljavax/swing/JScrollPane;
+ALOAD 1
+GETFIELD cQ.a Ljavax/swing/JTextPane;
+INVOKEVIRTUAL javax/swing/JScrollPane.setViewportView(Ljava/awt/Component;)V
+NEW javax/swing/GroupLayout
+DUP
+ALOAD 1
+INVOKESPECIAL javax/swing/GroupLayout.<init>(Ljava/awt/Container;)V
+ASTORE 2
+ALOAD 1
+ALOAD 2
+INVOKEVIRTUAL cQ.setLayout(Ljava/awt/LayoutManager;)V
+ALOAD 2
+DUP
+GETSTATIC javax/swing/GroupLayout$Alignment.LEADING Ljavax/swing/GroupLayout$Alignment;
+INVOKEVIRTUAL javax/swing/GroupLayout.createParallelGroup(Ljavax/swing/GroupLayout$Alignment;)Ljavax/swing/GroupLayout$ParallelGroup;
+ALOAD 2
+INVOKEVIRTUAL javax/swing/GroupLayout.createSequentialGroup()Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addContainerGap()Ljavax/swing/GroupLayout$SequentialGroup;
+ALOAD 1
+GETFIELD cQ.a Ljavax/swing/JScrollPane;
+ICONST_M1
+SIPUSH 596
+SIPUSH 32767
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addComponent(Ljava/awt/Component;III)Ljavax/swing/GroupLayout$SequentialGroup;
+GETSTATIC javax/swing/LayoutStyle$ComponentPlacement.RELATED Ljavax/swing/LayoutStyle$ComponentPlacement;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addPreferredGap(Ljavax/swing/LayoutStyle$ComponentPlacement;)Ljavax/swing/GroupLayout$SequentialGroup;
+ALOAD 2
+GETSTATIC javax/swing/GroupLayout$Alignment.LEADING Ljavax/swing/GroupLayout$Alignment;
+INVOKEVIRTUAL javax/swing/GroupLayout.createParallelGroup(Ljavax/swing/GroupLayout$Alignment;)Ljavax/swing/GroupLayout$ParallelGroup;
+ALOAD 1
+GETFIELD cQ.b LcX;
+BIPUSH -2
+BIPUSH 24
+BIPUSH -2
+INVOKEVIRTUAL javax/swing/GroupLayout$ParallelGroup.addComponent(Ljava/awt/Component;III)Ljavax/swing/GroupLayout$ParallelGroup;
+ALOAD 1
+GETFIELD cQ.a LcX;
+GETSTATIC javax/swing/GroupLayout$Alignment.TRAILING Ljavax/swing/GroupLayout$Alignment;
+BIPUSH -2
+BIPUSH 24
+BIPUSH -2
+INVOKEVIRTUAL javax/swing/GroupLayout$ParallelGroup.addComponent(Ljava/awt/Component;Ljavax/swing/GroupLayout$Alignment;III)Ljavax/swing/GroupLayout$ParallelGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addGroup(Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addContainerGap()Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$ParallelGroup.addGroup(Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$ParallelGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout.setHorizontalGroup(Ljavax/swing/GroupLayout$Group;)V
+ALOAD 2
+ICONST_0
+ICONST_2
+ANEWARRAY java/awt/Component
+DUP
+ICONST_0
+ALOAD 1
+GETFIELD cQ.a LcX;
+AASTORE
+DUP
+ICONST_1
+ALOAD 1
+GETFIELD cQ.b LcX;
+AASTORE
+INVOKEVIRTUAL javax/swing/GroupLayout.linkSize(I[Ljava/awt/Component;)V
+ALOAD 2
+DUP
+GETSTATIC javax/swing/GroupLayout$Alignment.LEADING Ljavax/swing/GroupLayout$Alignment;
+INVOKEVIRTUAL javax/swing/GroupLayout.createParallelGroup(Ljavax/swing/GroupLayout$Alignment;)Ljavax/swing/GroupLayout$ParallelGroup;
+ALOAD 2
+INVOKEVIRTUAL javax/swing/GroupLayout.createSequentialGroup()Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addContainerGap()Ljavax/swing/GroupLayout$SequentialGroup;
+ALOAD 2
+GETSTATIC javax/swing/GroupLayout$Alignment.LEADING Ljavax/swing/GroupLayout$Alignment;
+INVOKEVIRTUAL javax/swing/GroupLayout.createParallelGroup(Ljavax/swing/GroupLayout$Alignment;)Ljavax/swing/GroupLayout$ParallelGroup;
+ALOAD 1
+GETFIELD cQ.a Ljavax/swing/JScrollPane;
+ICONST_M1
+SIPUSH 235
+SIPUSH 32767
+INVOKEVIRTUAL javax/swing/GroupLayout$ParallelGroup.addComponent(Ljava/awt/Component;III)Ljavax/swing/GroupLayout$ParallelGroup;
+ALOAD 2
+INVOKEVIRTUAL javax/swing/GroupLayout.createSequentialGroup()Ljavax/swing/GroupLayout$SequentialGroup;
+ALOAD 1
+GETFIELD cQ.a LcX;
+BIPUSH -2
+BIPUSH 24
+BIPUSH -2
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addComponent(Ljava/awt/Component;III)Ljavax/swing/GroupLayout$SequentialGroup;
+GETSTATIC javax/swing/LayoutStyle$ComponentPlacement.RELATED Ljavax/swing/LayoutStyle$ComponentPlacement;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addPreferredGap(Ljavax/swing/LayoutStyle$ComponentPlacement;)Ljavax/swing/GroupLayout$SequentialGroup;
+ALOAD 1
+GETFIELD cQ.b LcX;
+BIPUSH -2
+BIPUSH 24
+BIPUSH -2
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addComponent(Ljava/awt/Component;III)Ljavax/swing/GroupLayout$SequentialGroup;
+ICONST_0
+ICONST_0
+SIPUSH 32767
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addGap(III)Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$ParallelGroup.addGroup(Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$ParallelGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addGroup(Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$SequentialGroup.addContainerGap()Ljavax/swing/GroupLayout$SequentialGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout$ParallelGroup.addGroup(Ljavax/swing/GroupLayout$Group;)Ljavax/swing/GroupLayout$ParallelGroup;
+INVOKEVIRTUAL javax/swing/GroupLayout.setVerticalGroup(Ljavax/swing/GroupLayout$Group;)V
+ALOAD 2
+ICONST_1
+ICONST_2
+ANEWARRAY java/awt/Component
+DUP
+ICONST_0
+ALOAD 1
+GETFIELD cQ.a LcX;
+AASTORE
+DUP
+ICONST_1
+ALOAD 1
+GETFIELD cQ.b LcX;
+AASTORE
+INVOKEVIRTUAL javax/swing/GroupLayout.linkSize(I[Ljava/awt/Component;)V
+ALOAD this
+INVOKEDYNAMIC process (LcQ;)LY; ${H_META} args[(Ljava/lang/String;LS;)V, handle[H_INVOKESPECIAL cQ.a(Ljava/lang/String;LS;)V], (Ljava/lang/String;LS;)V]
+ASTORE 1
+ALOAD this
+NEW S
+DUP
+ALOAD this
+GETFIELD cQ.a Ljavax/swing/JTextPane;
+ALOAD 1
+GETSTATIC java/awt/Color.BLACK Ljava/awt/Color;
+GETSTATIC java/awt/Color.GREEN Ljava/awt/Color;
+NEW java/awt/Font
+DUP
+LDC "Monospaced"
+ICONST_1
+BIPUSH 12
+INVOKESPECIAL java/awt/Font.<init>(Ljava/lang/String;II)V
+INVOKESPECIAL S.<init>(Ljavax/swing/JTextPane;LY;Ljava/awt/Color;Ljava/awt/Color;Ljava/awt/Font;)V
+PUTFIELD cQ.a LS;
+RETURN
+B:
+C:

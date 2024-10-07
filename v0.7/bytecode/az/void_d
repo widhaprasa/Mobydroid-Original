@@ -1,0 +1,42 @@
+DEFINE PRIVATE d()V
+ALIAS H_META "handle[H_INVOKESTATIC java/lang/invoke/LambdaMetafactory.metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;]"
+TRY EX_START_2 EX_END_2 CATCH(java/io/IOException) EX_HANDLER_2
+TRY EX_START_2 EX_END_2 CATCH(I) EX_HANDLER_2
+TRY EX_START_3 EX_END_3 CATCH(java/util/ConcurrentModificationException) EX_HANDLER_3
+EX_START_2:
+INVOKESTATIC com/hq/mobydroid/MobyDroid.a()LC;
+INVOKEVIRTUAL C.a()Ljava/util/Map;
+ASTORE 1
+EX_END_2:
+GOTO D
+EX_HANDLER_2:
+ASTORE 1
+GETSTATIC java/util/logging/Level.SEVERE Ljava/util/logging/Level;
+LDC "UpdateDevices"
+ALOAD 1
+INVOKESTATIC ab.a(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+RETURN
+D:
+ALOAD 1
+INVOKEINTERFACE java/util/Map.values()Ljava/util/Collection;
+ALOAD this
+INVOKEDYNAMIC accept (Laz;)Ljava/util/function/Consumer; ${H_META} args[(Ljava/lang/Object;)V, handle[H_INVOKESPECIAL az.a(LD;)V], (LD;)V]
+INVOKEINTERFACE java/util/Collection.forEach(Ljava/util/function/Consumer;)V
+EX_START_3:
+ALOAD this
+GETFIELD az.a Ljava/util/List;
+ALOAD this
+ALOAD 1
+INVOKEDYNAMIC accept (Laz;Ljava/util/Map;)Ljava/util/function/Consumer; ${H_META} args[(Ljava/lang/Object;)V, handle[H_INVOKESPECIAL az.a(Ljava/util/Map;Lal;)V], (Lal;)V]
+INVOKEINTERFACE java/util/List.forEach(Ljava/util/function/Consumer;)V
+EX_END_3:
+RETURN
+EX_HANDLER_3:
+ASTORE 1
+GETSTATIC java/util/logging/Level.SEVERE Ljava/util/logging/Level;
+LDC "EjectedDevices"
+ALOAD 1
+INVOKESTATIC ab.a(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+RETURN
+H:
+I:

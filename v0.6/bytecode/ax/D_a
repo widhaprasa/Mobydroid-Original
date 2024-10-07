@@ -1,0 +1,109 @@
+DEFINE PRIVATE SYNTHETIC a(LD; 1)V
+TRY EX_START_2 EX_END_2 CATCH(java/io/IOException) EX_HANDLER_2
+TRY EX_START_2 EX_END_2 CATCH(I) EX_HANDLER_2
+A:
+NEW aj
+DUP
+ALOAD 1
+INVOKESPECIAL aj.<init>(LD;)V
+ASTORE 1
+ALOAD this
+GETFIELD ax.a Ljava/util/List;
+ALOAD 1
+INVOKEINTERFACE java/util/List.contains(Ljava/lang/Object;)Z
+IFNE H
+ALOAD this
+GETFIELD ax.a Ljava/util/List;
+ALOAD 1
+INVOKEINTERFACE java/util/List.add(Ljava/lang/Object;)Z
+POP
+EX_START_2:
+ALOAD 1
+INVOKEVIRTUAL aj.a()LP;
+ASTORE 3
+LDC "<html><b>"
+ASTORE 2
+NEW java/lang/StringBuilder
+DUP
+INVOKESPECIAL java/lang/StringBuilder.<init>()V
+ALOAD 2
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ALOAD 3
+GETFIELD P.c Ljava/lang/String;
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+INVOKEVIRTUAL java/lang/StringBuilder.toString()Ljava/lang/String;
+ASTORE 2
+NEW java/lang/StringBuilder
+DUP
+INVOKESPECIAL java/lang/StringBuilder.<init>()V
+ALOAD 2
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+LDC "</b><br>"
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+INVOKEVIRTUAL java/lang/StringBuilder.toString()Ljava/lang/String;
+ASTORE 2
+ALOAD 3
+GETFIELD P.d Ljava/lang/String;
+INVOKEVIRTUAL java/lang/String.length()I
+BIPUSH 20
+IF_ICMPLE C
+NEW java/lang/StringBuilder
+DUP
+INVOKESPECIAL java/lang/StringBuilder.<init>()V
+ALOAD 2
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ALOAD 3
+GETFIELD P.d Ljava/lang/String;
+ICONST_0
+BIPUSH 20
+INVOKEVIRTUAL java/lang/String.substring(II)Ljava/lang/String;
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+INVOKEVIRTUAL java/lang/StringBuilder.toString()Ljava/lang/String;
+ASTORE 2
+GOTO D
+C:
+NEW java/lang/StringBuilder
+DUP
+INVOKESPECIAL java/lang/StringBuilder.<init>()V
+ALOAD 2
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+ALOAD 3
+GETFIELD P.d Ljava/lang/String;
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+INVOKEVIRTUAL java/lang/StringBuilder.toString()Ljava/lang/String;
+ASTORE 2
+D:
+NEW java/lang/StringBuilder
+DUP
+INVOKESPECIAL java/lang/StringBuilder.<init>()V
+ALOAD 2
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+LDC "</html>"
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+INVOKEVIRTUAL java/lang/StringBuilder.toString()Ljava/lang/String;
+ASTORE 2
+EX_END_2:
+GOTO G
+EX_HANDLER_2:
+ASTORE 3
+NEW java/lang/StringBuilder
+DUP
+INVOKESPECIAL java/lang/StringBuilder.<init>()V
+ALOAD 1
+GETFIELD D.a Ljava/lang/String;
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+LDC " (Unknown)"
+INVOKEVIRTUAL java/lang/StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+INVOKEVIRTUAL java/lang/StringBuilder.toString()Ljava/lang/String;
+ASTORE 2
+GETSTATIC java/util/logging/Level.SEVERE Ljava/util/logging/Level;
+LDC "GetDeviceProperties"
+ALOAD 3
+INVOKESTATIC Z.a(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+G:
+ALOAD this
+GETFIELD ax.a Ljavax/swing/JComboBox;
+ALOAD 2
+INVOKEVIRTUAL javax/swing/JComboBox.addItem(Ljava/lang/Object;)V
+H:
+RETURN

@@ -1,0 +1,13 @@
+DEFINE PRIVATE <init>(Ljava/lang/String; 1)V
+A:
+ALOAD this
+INVOKESPECIAL java/lang/Object.<init>()V
+ALOAD this
+ALOAD 1
+PUTFIELD C.a Ljava/lang/String;
+ALOAD this
+SIPUSH 5037
+PUTFIELD C.b I
+RETURN
+B:
+C:

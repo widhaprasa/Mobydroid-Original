@@ -1,0 +1,7 @@
+DEFINE PUBLIC <init>()V
+A:
+ALOAD this
+LDC "localhost"
+INVOKESPECIAL C.<init>(Ljava/lang/String;)V
+RETURN
+B:

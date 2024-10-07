@@ -1,0 +1,44 @@
+DEFINE PUBLIC STATIC a()Z
+TRY EX_START_2 EX_END_2 CATCH(java/io/IOException) EX_HANDLER_4
+TRY EX_START_2 EX_END_2 CATCH(java/lang/InterruptedException) EX_HANDLER_4
+TRY EX_START_4 EX_END_4 CATCH(java/io/IOException) EX_HANDLER_4
+TRY EX_START_4 EX_END_4 CATCH(java/lang/InterruptedException) EX_HANDLER_4
+EX_START_2:
+INVOKESTATIC java/lang/Runtime.getRuntime()Ljava/lang/Runtime;
+LDC "adb start-server"
+INVOKEVIRTUAL java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;
+DUP
+ASTORE 0
+INVOKEVIRTUAL java/lang/Process.waitFor()I
+POP
+ALOAD 0
+INVOKEVIRTUAL java/lang/Process.exitValue()I
+DUP
+ISTORE 0
+IFNE EX_START_4
+GETSTATIC java/util/logging/Level.INFO Ljava/util/logging/Level;
+LDC "JadbLauncher"
+LDC "Launched"
+INVOKESTATIC Z.a(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+ICONST_1
+EX_END_2:
+IRETURN
+EX_START_4:
+GETSTATIC java/util/logging/Level.WARNING Ljava/util/logging/Level;
+LDC "JadbLauncher"
+LDC "exited with exit code "
+ILOAD 0
+INVOKESTATIC java/lang/String.valueOf(I)Ljava/lang/String;
+INVOKEVIRTUAL java/lang/String.concat(Ljava/lang/String;)Ljava/lang/String;
+INVOKESTATIC Z.a(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+EX_END_4:
+GOTO F
+EX_HANDLER_4:
+ASTORE 0
+GETSTATIC java/util/logging/Level.SEVERE Ljava/util/logging/Level;
+LDC "JadbLauncher"
+ALOAD 0
+INVOKESTATIC Z.a(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Object;)V
+F:
+ICONST_0
+IRETURN
